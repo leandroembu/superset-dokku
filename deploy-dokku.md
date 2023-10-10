@@ -78,6 +78,10 @@ dokku redis:create $REDIS_NAME
 dokku postgres:link $PG_NAME $APP_NAME
 dokku redis:link $REDIS_NAME $APP_NAME
 
+# Admin user login vars
+dokku config:set --no-restart $APP_NAME SUPERSET_ADMIN_EMAIL=admin@superset.example
+dokku config:set --no-restart $APP_NAME SUPERSET_ADMIN_PASSWORD=mysecretpassword
+
 # Required environment variables
 dokku config:set --no-restart $APP_NAME SUPERSET_EMAIL_NOTIFICATIONS=True
 dokku config:set --no-restart $APP_NAME SUPERSET_SMTP_HOST=<smtp host>
