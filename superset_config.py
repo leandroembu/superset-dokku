@@ -34,3 +34,6 @@ ENABLE_PROXY_FIX = True
 SQLLAB_ASYNC_TIME_LIMIT_SEC = 300
 SQLLAB_TIMEOUT = 300
 SUPERSET_WEBSERVER_TIMEOUT = 300
+
+# Gamma role grants readonly access to some superset features
+PUBLIC_ROLE_LIKE = "Gamma"
