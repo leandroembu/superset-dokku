@@ -82,6 +82,9 @@ dokku redis:link $REDIS_NAME $APP_NAME
 dokku config:set --no-restart $APP_NAME SUPERSET_ADMIN_EMAIL=admin@superset.example
 dokku config:set --no-restart $APP_NAME SUPERSET_ADMIN_PASSWORD=mysecretpassword
 
+# Embedding charts token
+dokku config:set --no-restart SUPERSET_EMBED_TOKEN=$(openssl rand -base64 64 | tr -d ' \n')
+
 # Required environment variables
 dokku config:set --no-restart $APP_NAME SUPERSET_EMAIL_NOTIFICATIONS=True
 dokku config:set --no-restart $APP_NAME SUPERSET_SMTP_HOST=<smtp host>
